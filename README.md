@@ -1,27 +1,73 @@
 # Foody
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+## Overview
+Foody is an Angular-based web application designed to make online food ordering simple and seamless. With an intuitive user interface, users can browse a menu of dishes and place their orders effortlessly.
 
-## Development server
+## Demo
+https://foody-pi-livid.vercel.app/
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
+- **User-Friendly Interface**: A clean and modern UI for an enjoyable user experience.
 
-## Code scaffolding
+- **Food Menu**: View a wide variety of dishes categorized for easy navigation.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Order Placement**: Quickly select and order your favorite dishes.
 
-## Build
+- **Responsive Design**: Accessible on both desktop and mobile devices.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Tech Stack
+- **Frontend**: Angular
+- **Backend**: Nodejs
+- **Database**: Mongodb
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/abhimanyuraj040/Foody.git
+   cd foody
+   ```
 
-## Running end-to-end tests
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Start the development server:
+   ```bash
+   ng serve
+   ```
 
-## Further help
+4. Open the application in your browser:
+   ```
+   http://localhost:4200
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Usage
+1. Open the application in your browser.
+2. Browse the menu of dishes.
+3. Add your desired dishes to the cart.
+4. Proceed to checkout and confirm your order.
+
+## Contributing
+Contributions are welcome! Please follow these steps:
+1. Fork the repository.
+2. Create a new branch for your feature/bugfix:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add a meaningful commit message"
+   ```
+4. Push to your fork:
+   ```bash
+   git push origin feature-name
+   ```
+5. Create a pull request.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Contact
+For inquiries or feedback, please reach out at [abhimanyuraj040@gmail.com].
