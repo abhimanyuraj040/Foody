@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Tag } from '../shared/models/Tag';
+import { FoodService } from '../services/food/food.service';
 
 @Component({
   selector: 'app-tags',
@@ -18,11 +19,11 @@ export class TagsComponent implements OnInit{
   justifyContent: string = "center";
 
   tags?: Tag[];
-  // constructor(private foodService: FoodService) {}
+  constructor(private foodService: FoodService) {}
 
   ngOnInit(): void {
     if (!this.foodPageTags) {
-      // this.tags = this.foodService.getAllTags();
+      this.tags = this.foodService.getAllTags();
     }
   }
 

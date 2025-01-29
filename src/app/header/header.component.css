@@ -38,6 +38,7 @@ nav ul li a {
 .cart{
     font-weight: bold;
     padding: 1em;
+    margin-left: 11rem;
 }
 
 .user-section {
