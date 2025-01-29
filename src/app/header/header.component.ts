@@ -18,6 +18,10 @@ export class HeaderComponent {
     this.router.navigate(['/cart-page']);
   }
 
+  goToMyAccount(){
+    this.router.navigate(['/my-account']);
+  }
+
   toggleUserMenu() {
     this.isUserMenuOpen = !this.isUserMenuOpen;
   }

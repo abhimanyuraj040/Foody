@@ -9,10 +9,10 @@ a {
     cursor: pointer;
 }
 
-a:hover {
+/* a:hover {
     background: #e72929;
     color: white;
-}
+} */
 
 .container {
     margin: 0 auto;

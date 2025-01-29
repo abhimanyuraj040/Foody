@@ -1,3 +1,5 @@
+<app-tags></app-tags>
+
 <app-not-found
   [visible]="!cart || cart.items.length <= 0"
   notFoundMessage="Cart Page is Empty!"
@@ -15,24 +17,12 @@
           {{ cartItem.food.name }}
         </a>
       </div>
-      <div>
-        <select
-          #quantitySelect
-          (change)="changeQuantity(cartItem, quantitySelect.value)"
-        >
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option> 
-          <option>8</option>
-        </select>
+      <div class="quantity-control">
+        <button (click)="updateQuantity(cartItem, -1)" [disabled]="cartItem.quantity <= 1">-</button>
+        <span>{{ cartItem.quantity }}</span>
+        <button (click)="updateQuantity(cartItem, 1)">+</button>
       </div>
-      <div>
-        Rs. {{ cartItem.price }}
-      </div>
+      <div>Rs. {{ cartItem.price }}</div>
       <div>
         <button class="remove-button" (click)="removeFromCart(cartItem)">
           Remove
@@ -43,8 +33,8 @@
 
   <div class="checkout">
     <div>
-      <div class="foods-count">{{ cart.items.length }}</div>
-      <div class="total-price">Rs. {{ cart.totalPrice}}</div>
+      <div class="total-price">Rs. {{ cart.totalPrice }}</div>
+      <button class="pay-now" (click)="payNow(cart)">Pay Now</button>
     </div>
   </div>
 </div>

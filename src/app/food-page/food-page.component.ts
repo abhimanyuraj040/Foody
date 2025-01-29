@@ -12,7 +12,7 @@ import { CartService } from '../services/cart/cart.service';
   standalone: true,
   imports: [TagsComponent, CommonModule, NotFoundComponent],
   templateUrl: './food-page.component.html',
-  styleUrl: './food-page.component.css'
+  styleUrl: './food-page.component.css',
 })
 export class FoodPageComponent {
   food!: Food;
@@ -23,14 +23,15 @@ export class FoodPageComponent {
     private router: Router
   ) {
     activatedRoute.params.subscribe((params) => {
-      if (params["id"]) {
-        this.food = foodService.getFoodById(params["id"]);
+      if (params['id']) {
+        this.food = foodService.getFoodById(params['id']);
       }
     });
   }
 
   addToCart() {
     this.cartService.addToCart(this.food);
-    this.router.navigateByUrl("/cart");
+    // this.router.navigateByUrl("/cart");
+    this.router.navigate(['/cart-page']);
   }
 }
