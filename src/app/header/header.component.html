@@ -2,6 +2,22 @@
   <div class="container">
     <a href="#" routerLink="/" class="logo">Foody</a>
     <app-search style="margin: -3rem 0rem -1rem 25rem"></app-search>
+
     <a (click)="goToCart()" class="cart">Cart</a>
+
+    <div class="user-section">
+      <button class="user-button" (click)="toggleUserMenu()">
+        <i class="fas fa-user"><img src="/assets/images/user.png" alt="user" style="height: 2rem; width: 2rem; margin-right: 2rem;"/></i>
+      </button>
+
+      <div class="user-menu" [class.show]="isUserMenuOpen">
+        <a routerLink="/orders" class="menu-item">Orders</a>
+        <a routerLink="/account" class="menu-item">My Account</a>
+        <a href="#" class="menu-item">Help</a>
+        <div class="divider"></div>
+        <button class="menu-item logout" (click)="logout()">Logout</button>
+      </div>
+    </div>
+
   </div>
 </header>
