@@ -1,6 +1,6 @@
 <header>
   <div class="container">
-    <a href="#" routerLink="/" class="logo">Foody</a>
+    <a href="/home" routerLink="/home" class="logo">Foody</a>
     <app-search style="margin: -2rem 0rem -1rem 25rem"></app-search>
 
     <a (click)="goToCart()" class="cart"
@@ -28,10 +28,10 @@
       <div class="user-menu" [class.show]="isUserMenuOpen">
         <a (click)="goToMyAccount()" class="menu-item">My Account</a>
         <a routerLink="/orders" class="menu-item">My Orders</a>
-        <a href="#" class="menu-item">Help</a>
+        <a (click)="goToAuthPage()" class="menu-item">Help</a>
         <div class="divider"></div>
         <button class="menu-item logout" (click)="logout()">
-          <span style="color: rgb(0, 0, 0)">Logout</span>
+          <span style="color: rgb(0, 0, 0)"><b>Logout</b></span>
         </button>
       </div>
     </div>

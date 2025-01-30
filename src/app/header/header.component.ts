@@ -18,8 +18,12 @@ export class HeaderComponent {
     this.router.navigate(['/cart-page']);
   }
 
-  goToMyAccount(){
+  goToMyAccount() {
     this.router.navigate(['/my-account']);
+  }
+
+  goToAuthPage() {
+    this.router.navigate(['/auth-page']);
   }
 
   toggleUserMenu() {
@@ -27,9 +31,17 @@ export class HeaderComponent {
   }
 
   logout() {
-    // Add your logout logic here
+    localStorage.removeItem('user');
+    localStorage.removeItem('rememberMe');
+
+    // Log the action
     console.log('User logged out');
+
+    // Close user menu if open
     this.isUserMenuOpen = false;
+
+    // Redirect to the login/auth page
+    this.router.navigate(['/auth-page']);
   }
 
   // Add this to close menu when clicking outside

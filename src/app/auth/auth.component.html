@@ -1,0 +1,119 @@
+<div class="auth-container">
+  <!-- Login Form -->
+  <form *ngIf="isLoginMode" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h2>Login</h2>
+
+    <div class="form-group">
+      <label>Email:</label>
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Enter your email"
+      />
+      <div
+        *ngIf="
+          loginForm.get('email')?.invalid && loginForm.get('email')?.touched
+        "
+        class="error"
+      >
+        Please enter a valid email
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Password:</label>
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Enter your password"
+      />
+      <div
+        *ngIf="
+          loginForm.get('password')?.invalid &&
+          loginForm.get('password')?.touched
+        "
+        class="error"
+      >
+        Password is required
+      </div>
+    </div>
+
+    <div class="login-options">
+      <label class="remember-me">
+        <input type="checkbox" formControlName="rememberMe" /> Remember me
+      </label>
+      <a class="forgot-password" (click)="onForgotPassword()"
+        >Forgot Password?</a
+      >
+    </div>
+
+    <div class="button-group">
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+      <p class="signup-prompt">
+        Don't have an account? <a (click)="switchMode(false)">Sign Up</a>
+      </p>
+    </div>
+  </form>
+
+  <!-- Signup Form -->
+  <form *ngIf="!isLoginMode" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <h2>Create Account</h2>
+
+    <div class="form-group">
+      <label>Name:</label>
+      <input type="text" formControlName="name" placeholder="Enter your name" />
+      <div
+        *ngIf="
+          signupForm.get('name')?.invalid && signupForm.get('name')?.touched
+        "
+        class="error"
+      >
+        Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email:</label>
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Enter your email"
+      />
+      <div
+        *ngIf="
+          signupForm.get('email')?.invalid && signupForm.get('email')?.touched
+        "
+        class="error"
+      >
+        Please enter a valid email
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Password:</label>
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Enter your password"
+      />
+      <div
+        *ngIf="
+          signupForm.get('password')?.invalid &&
+          signupForm.get('password')?.touched
+        "
+        class="error"
+      >
+        Password must be at least 6 characters
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button type="submit" [disabled]="signupForm.invalid">
+        Create Account
+      </button>
+      <p class="login-prompt">
+        Already have an account? <a (click)="switchMode(true)">Login</a>
+      </p>
+    </div>
+  </form>
+</div>

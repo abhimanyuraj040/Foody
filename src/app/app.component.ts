@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { CommonModule } from '@angular/common';
 
@@ -12,4 +12,11 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'Foody';
+  hideHeader = false;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(() => {
+      this.hideHeader = this.router.url.includes('/auth-page'); // Adjust the path as needed
+    });
+  }
 }
