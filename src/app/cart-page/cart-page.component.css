@@ -118,7 +118,7 @@ ul .remove-button:hover {
 }
 
 .checkout .total-price::before {
-  content: "Price: ";
+  content: "Total Price: ";
   color: grey;
 }
 
