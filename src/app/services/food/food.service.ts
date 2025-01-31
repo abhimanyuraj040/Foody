@@ -14,18 +14,41 @@ export class FoodService {
   }
 
   // get all the tag models instances
+  // getAllTags(): Tag[] {
+  //   // literals gonna be calculated by the server
+  //   return [
+  //     { name: "All", count: 14 },
+  //     { name: "Breakfast", count: 4 },
+  //     { name: "Pizza", count: 2 },
+  //     { name: "Lunch", count: 3 },
+  //     { name: "Snacks", count: 2 },
+  //     { name: "Burger", count: 1 },
+  //     { name: "Dinner", count: 1 },
+  //     { name: "Soup", count: 1 },
+  //   ];
+  // }
+
+
   getAllTags(): Tag[] {
-    // literals gonna be calculated by the server
-    return [
-      { name: "All", count: 14 },
-      { name: "Breakfast", count: 4 },
-      { name: "Pizza", count: 2 },
-      { name: "Lunch", count: 3 },
-      { name: "Snacks", count: 2 },
-      { name: "Burger", count: 1 },
-      { name: "Dinner", count: 1 },
-      { name: "Soup", count: 1 },
-    ];
+    const tagCounts: { [key: string]: number } = {};
+  
+    // Count occurrences of each tag
+    this.getAll().forEach(food => {
+      food.tags?.forEach(tag => {
+        tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+      });
+    });
+  
+    // Convert the tag counts into an array of Tag objects
+    const tags = Object.keys(tagCounts).map(name => ({
+      name,
+      count: tagCounts[name]
+    }));
+  
+    // Add the 'All' tag with the total number of foods
+    tags.unshift({ name: "All", count: this.getAll().length });
+  
+    return tags;
   }
 
   // get the foods filtered by tags
