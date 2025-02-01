@@ -26,7 +26,7 @@
       </button>
 
       <div class="user-menu" [class.show]="isUserMenuOpen">
-        <a routerLink="/orders" class="menu-item">Abhimanyu Kumar</a>
+        <a routerLink="/orders" class="menu-item">{{ userName }}</a>
         <a (click)="goToMyAccount()" class="menu-item">My Account</a>
         <a routerLink="/orders" class="menu-item">My Orders</a>
         <a (click)="goToAuthPage()" class="menu-item">Help</a>

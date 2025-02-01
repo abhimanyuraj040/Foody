@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SearchComponent } from '../search/search.component';
 
@@ -9,8 +9,14 @@ import { SearchComponent } from '../search/search.component';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   isUserMenuOpen = false;
+  userName: string = 'User';
+
+  ngOnInit(): void {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    this.userName = user.name || 'User';
+  }
 
   constructor(private router: Router) {}
 
