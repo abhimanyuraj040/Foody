@@ -40,13 +40,10 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('user');
     localStorage.removeItem('rememberMe');
 
-    // Log the action
     console.log('User logged out');
 
-    // Close user menu if open
     this.isUserMenuOpen = false;
 
-    // Redirect to the login/auth page
     this.router.navigate(['/auth-page']);
   }
 
